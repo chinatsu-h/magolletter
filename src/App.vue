@@ -11,6 +11,7 @@
     <ul>
       <li v-for="(msg, index) in messages" :key="index">
         {{ msg }}
+        <button @click="deleteMessage(index)">削除</button>
       </li>
     </ul>
   </div>
@@ -26,6 +27,10 @@ const addMessage = () => {
     messages.value.push(message.value);
     message.value = "";
   }
+};
+
+const deleteMessage = (index) => {
+  messages.value.splice(index, 1);
 };
 </script>
 <style>
@@ -75,4 +80,3 @@ li {
   list-style: none;
 }
 </style>
-
