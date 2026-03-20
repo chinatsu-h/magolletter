@@ -21,16 +21,22 @@ import { ref } from "vue";
 
 const message = ref("");
 const messages = ref([]);
-
+// 保存データ読み込み
+const saved = localStorage.getItem("messages");
+if (saved) {
+  messages.value = JSON.parse(saved);
+}
 const addMessage = () => {
   if (message.value !== "") {
     messages.value.push(message.value);
+    localStorage.setItem("messages", JSON.stringify(messages.value));
     message.value = "";
   }
 };
 
 const deleteMessage = (index) => {
   messages.value.splice(index, 1);
+  localStorage.setItem("messages", JSON.stringify(messages.value));
 };
 </script>
 <style>
