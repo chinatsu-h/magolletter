@@ -1,38 +1,37 @@
-# magolletter
+まごレター
 
-This template should help get you started developing with Vue 3 in Vite.
+1. タイトル & 概要（Introduction）
+祖父母と飲食店を訪れた際、タブレット端末の操作に戸惑う姿を見たことがきっかけで開発しました。  
+飲食店のタブレットは「選択肢が多い」「アイコンの意味が分かりづらい」「操作ミスが不安」「文字が見えにくい」といった課題があると考えています。  
+そこで本アプリでは、「これを触れば楽しいことが起きる」という成功体験を提供することを目的とし、誰でも直感的に使えるシンプルなUIを実現しました。
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+2. 使用技術（Technology Stack）
+- Vue.js
+- JavaScript
+- HTML / CSS
+- Vite
 
-## Recommended Browser Setup
+---
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+3. 機能一覧（Features）
+- メッセージ一覧表示機能
+- シンプルなUI設計（高齢者向け）
+- 画面遷移機能（Vue Router）
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+4. 工夫した点（Highlights）
+祖父母と飲食店を訪れた際、タブレット操作に戸惑う様子を観察し、「なぜ使いづらいのか」を分析しました。  
+その結果、「選択肢が多すぎる」「アイコンの意味が直感的に理解できない」「操作ミスへの不安」「文字の視認性が低い」といった課題があると考えました。
+これらの課題に対し、本アプリでは「まず成功体験を得てもらうこと」を最優先に設計しました。  
+そのため、あえて機能を最小限に絞り、ユーザーが迷わず操作できるシンプルな構成にしています。
+また、ボタンやテキストの配置・大きさ・情報量を調整し、直感的に操作できるUIを意識しました。  
+特に、「押せば何かが起こる」という安心感を持たせることで、操作への心理的ハードルを下げる工夫を行っています。
+このように、単に機能を実装するのではなく、「誰のためのサービスか」「どのような体験を提供するか」を重視して設計しました。
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+5. 今後の展望（Future Work）
+- 画像送信機能の追加
+- メッセージ削除機能の実装
+- デザインの改善（視認性・操作性の向上）
