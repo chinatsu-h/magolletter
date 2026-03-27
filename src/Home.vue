@@ -9,8 +9,9 @@
     <!-- 送ったメッセージ -->
     <h2>送ったメッセージ</h2>
     <ul>
-      <li v-for="(msg, index) in messages" :key="index">
-        {{ msg }}
+      <li v-for="msg in messages" :key="msg.id">
+        {{ msg.text }}
+        <button @click="deleteMessage(msg.id)">削除</button>
       </li>
     </ul>
 
@@ -23,7 +24,14 @@
 <script setup>
 import { ref } from "vue";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDlhKXZW1JiA8Vu8ZRiX0eps4hw3FKw3Y",
@@ -57,10 +65,23 @@ const sendMessage = async () => {
   loadMessages();
 };
 
+// 削除
+const deleteMessage = async (id) => {
+  try {
+    await deleteDoc(doc(db, "messages", id));
+    loadMessages();
+  } catch (error) {
+    console.error("削除エラー:", error);
+  }
+};
+
 // 取得
 const loadMessages = async () => {
   const snapshot = await getDocs(collection(db, "messages"));
-  messages.value = snapshot.docs.map((doc) => doc.data().text);
+  messages.value = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
 };
 
 // 初期読み込み
