@@ -1,5 +1,5 @@
 アプリURL
-https://magolletter-g0f6xa0a8-chinatsu-hs-projects.vercel.app
+https://magolletter.web.app
 ※メッセージ送信・選択送信機能を実際にお試しいただけます。
 
 1．タイトル
